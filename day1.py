@@ -50,7 +50,6 @@ class InputHandler:
     
 def turn_dial_as_instructed(dial, instructions):
     for i in instructions:
-        print(dial.get_pointer())
         if i[0] == "L":
             dial.turn_left(i[1])
         else:
