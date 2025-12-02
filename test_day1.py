@@ -75,4 +75,4 @@ def test_turn_dial_as_instructed():
         ]
     
     code = turn_dial_as_instructed(dial, instructions)
-    assert dial.get_zero_count() == 3
+    assert dial.get_zero_count() == 6

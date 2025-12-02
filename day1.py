@@ -16,22 +16,21 @@ class Dial:
         return self.zero_count
 
     def turn_left(self, amount):
-        amount = amount % 100
-        value = 0
-        if self.pointer - amount < 0:
-            value = 100 + (self.pointer - amount)
-        else:
-            value = self.pointer - amount
-        self.set_pointer(value)
+        while amount > 0:
+            if self.pointer == 0:
+                self.set_pointer(99)
+            else:
+                self.set_pointer(self.pointer-1)
+            amount -= 1
 
     def turn_right(self, amount):
-        amount = amount % 100
-        value = 0
-        if self.pointer + amount >= 100:
-            value = (self.pointer + amount) - 100
-        else:
-            value = self.pointer + amount
-        self.set_pointer(value)
+        while amount > 0:
+            if self.pointer == 99:
+                self.set_pointer(0)
+            else:
+                self.set_pointer(self.pointer+1)
+            amount -= 1
+
 
 class InputHandler:
 
@@ -51,6 +50,7 @@ class InputHandler:
     
 def turn_dial_as_instructed(dial, instructions):
     for i in instructions:
+        print(dial.get_pointer())
         if i[0] == "L":
             dial.turn_left(i[1])
         else:
