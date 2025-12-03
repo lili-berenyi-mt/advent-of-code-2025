@@ -1,4 +1,4 @@
-from day1 import Dial, InputHandler, turn_dial_as_instructed
+from advent_of_code_2025.day1 import Dial, InputHandler, turn_dial_as_instructed
 
 def test_turn_dial_left():
     dial = Dial()
@@ -48,13 +48,13 @@ def test_get_zero_count_after_multiple_turns():
 
 def test_reads_input_from_file():
     inputHandler = InputHandler()
-    input = inputHandler.read_input("inputs/test.txt")
+    input = inputHandler.read_input("inputs/day1_test.txt")
     assert input == f"L68\nL30\nR48"
 
 def test_converts_input_into_instruction_list():
     pass
     inputHandler = InputHandler()
-    input = inputHandler.read_input("inputs/test.txt")
+    input = inputHandler.read_input("inputs/day1_test.txt")
     instructions = inputHandler.string_to_instruction_list(input)
 
     assert instructions == [("L",68), ("L",30),("R",48)]

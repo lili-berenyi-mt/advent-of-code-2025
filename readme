@@ -1,0 +1,3 @@
+Add an inputs folder in the root and add your inputs in txt files eg "day1.txt" and "day1_test.txt"
+Install pytest so tests can run
+Run the sripts to get the solution eg "python3 day1.py"

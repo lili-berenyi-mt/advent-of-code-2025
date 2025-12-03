@@ -1,5 +1,4 @@
 class Dial:
-
     def __init__(self):
         self.pointer = 50
         self.zero_count = 0
@@ -33,7 +32,6 @@ class Dial:
 
 
 class InputHandler:
-
     def read_input(self, location):
         f = open(location)
         input = f.read()
@@ -65,6 +63,3 @@ if __name__ == "__main__":
     turn_dial_as_instructed(dial, instructions)
     password = dial.get_zero_count()
     print(f"The password is: {password}")
-
-
-
